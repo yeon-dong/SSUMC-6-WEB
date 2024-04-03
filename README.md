@@ -22,7 +22,6 @@ SSUMC 6기 WEB 스터디 A조
 | 10주차 | `Redux Toolkit 활용 API 통신`|  `Redux Toolkit 활용 SMU PlayList` |
 
 ## ⭐️ 스터디 규칙
-
 | 항목       | 방법     | 상세 설명                    |
 |----------|--------|----------------------------|
 | 키워드 정리 | `->` | `노션`                    |
@@ -40,7 +39,7 @@ SSUMC 6기 WEB 스터디 A조
 2. 매주 실습, 미션은 각자의 닉네임/main 브랜치를 base 브랜치로 삼아 `닉네임/이슈번호 브랜치`를 생성하여 관련 파일을 업로드합니다.
 3. 모든 팀원들의 approve를 받으면, pr을 머지합니다. approve와 merge는 스터디 진행 중에 이루어집니다.
 branch 명 : 닉네임 / 해당 주차
-ex. yuyeong / 1 week 
+
 
 ## 🔖 commit 규칫
 | Message  | 설명                                              |
