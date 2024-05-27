@@ -37,3 +37,21 @@ export const MovieInfoContent = styled.div`
         margin-left: 3px;
     }
 `;
+
+export const PaginationContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 30px 10px;
+`;
+
+export const PaginationText = styled.div`
+    color: white;
+    font-size: 20px;
+`;
+
+export const PaginationBtn = styled.button`
+    margin-right: 20px;
+    margin-left: 20px;
+    color: white;
+    background-color: ${props => props.$disable ? 'grey' : 'black' };
+`;

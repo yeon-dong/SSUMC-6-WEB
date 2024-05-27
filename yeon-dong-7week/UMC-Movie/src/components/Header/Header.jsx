@@ -4,8 +4,7 @@ import {
     HeaderWrap,
     HeaderLeftWrap,
     HeaderRightWrap,
-    HeaderNavItem,
-    SignUpButton
+    HeaderNavItem
   } from "./Header.style"
 
 function Header() {
@@ -22,7 +21,10 @@ function Header() {
             <HeaderRightWrap>
               <ul>
                 <li>
-                  <SignUpButton to='/signup'>회원가입</SignUpButton>  
+                  <HeaderNavItem to='/signup'>회원가입</HeaderNavItem>
+                </li>
+                <li>
+                  <HeaderNavItem to='/login'>로그인</HeaderNavItem>
                 </li>
                 <li>
                   <HeaderNavItem to='/now'>

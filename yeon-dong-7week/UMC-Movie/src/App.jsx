@@ -9,6 +9,7 @@ import UpComingPage from "./pages/UpComingPage/UpComingPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/top" element={<TopRatedPage />}></Route>
           <Route path="/coming" element={<UpComingPage />}></Route>
           <Route path="/signup" element={<SignUpPage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/*" element={<NotFoundPage />}></Route>
         </Routes>
       </BrowserRouter>

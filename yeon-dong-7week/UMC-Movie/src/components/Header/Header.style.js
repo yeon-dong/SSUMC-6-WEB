@@ -48,17 +48,3 @@ export const HeaderNavItem = styled(Link)`
         color: rgb(218, 207, 0);
     }
 `;
-
-export const SignUpButton = styled(Link)`
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: font-size 0.5s;
-
-    &:hover{
-        font-size: 20px;
-        color: rgb(218, 207, 0);
-    }
-
-    cursor:pointer;
-`;
