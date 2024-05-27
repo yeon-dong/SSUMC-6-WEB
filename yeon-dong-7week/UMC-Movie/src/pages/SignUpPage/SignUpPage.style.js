@@ -40,3 +40,20 @@ export const StyledButton = styled.button`
     opacity: 0.7;
   }
 `;
+
+export const StyleGoLogin = styled.div`
+    display: flex;
+    margin-top: 12px;
+    width: 40vw;
+    justify-content: space-between
+`;
+
+export const StyleGoLoginText = styled.div`
+  color: white;
+`;
+
+export const StyleGoLoginBtn = styled.a`
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+`;

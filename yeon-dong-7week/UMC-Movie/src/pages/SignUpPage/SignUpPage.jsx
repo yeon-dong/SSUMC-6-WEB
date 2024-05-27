@@ -1,4 +1,4 @@
-import { Container, ValidationText, StyledInput, StyledError, StyledButton } from "./SignUpPage.style"
+import { Container, ValidationText, StyledInput, StyledError, StyledButton, StyleGoLogin, StyleGoLoginBtn, StyleGoLoginText } from "./SignUpPage.style"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
@@ -6,6 +6,7 @@ function SignUpPage() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
+        id:'',
         email: '',
         age: '',
         password: '',
@@ -13,6 +14,7 @@ function SignUpPage() {
     })
     const [errors, setErrors] = useState({
         name: '',
+        id:'',
         email: '',
         age: '',
         password: '',
@@ -31,6 +33,9 @@ function SignUpPage() {
           case 'name':
             errorMessage = value ? '' : '이름을 입력해주세요!';
             break;
+          case 'id':
+              errorMessage = value ? '' : '아이디를 입력해주세요!';
+              break;
           case 'email':
             errorMessage = value.includes('@') ? '' : '유효한 이메일을 입력해주세요!';
             break;
@@ -82,6 +87,13 @@ function SignUpPage() {
             />
             {errors.name ? <StyledError $errMsg={errors.name}>{errors.name}</StyledError> : <StyledError>-</StyledError>}
             <StyledInput
+                placeholder="아이디를 입력해주세요"
+                value={formData.id}
+                onChange={(e) => handleChange('id', e.target.value)}
+                type="text"
+            />
+            {errors.id ? <StyledError $errMsg={errors.id}>{errors.id}</StyledError> : <StyledError>-</StyledError>}
+            <StyledInput
                 placeholder="이메일을 입력해주세요"
                 value={formData.email}
                 onChange={(e) => handleChange('email', e.target.value)}
@@ -109,7 +121,11 @@ function SignUpPage() {
                 onChange={(e) => handleChange('verify_password', e.target.value)}
             />
             {errors.verify_password ? <StyledError $errMsg={errors.verify_password}>{errors.verify_password}</StyledError> : <StyledError>-</StyledError>}
-            <StyledButton onClick={handleSubmit} disabled={!canSubmit()} $canSubmit={canSubmit()}>제출하기</StyledButton>   
+            <StyledButton onClick={handleSubmit} disabled={!canSubmit()} $canSubmit={canSubmit()}>제출하기</StyledButton>
+            <StyleGoLogin>
+              <StyleGoLoginText>이미 아이디가 있으신가요?</StyleGoLoginText>
+              <StyleGoLoginBtn href="./login">로그인 페이지로 이동하기</StyleGoLoginBtn>
+            </StyleGoLogin>
         </Container>
       </>
     )
