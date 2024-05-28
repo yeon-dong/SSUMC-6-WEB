@@ -7,7 +7,7 @@ export const signUp = async (formData) => {
     age: formData.age,
     username: formData.id,
     password: formData.password,
-    verify_password: formData.verify_password,
+    passwordCheck: formData.verify_password,
   };
 
   try {
