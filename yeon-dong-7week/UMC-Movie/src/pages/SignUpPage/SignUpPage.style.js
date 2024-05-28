@@ -41,18 +41,18 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyleGoLogin = styled.div`
+export const StyledGoLogin = styled.div`
     display: flex;
     margin-top: 12px;
     width: 40vw;
     justify-content: space-around;
 `;
 
-export const StyleGoLoginText = styled.div`
+export const StyledGoLoginText = styled.div`
   color: white;
 `;
 
-export const StyleGoLoginBtn = styled.a`
+export const StyledGoLoginBtn = styled.a`
   text-decoration: none;
   color: white;
   font-weight: 700;

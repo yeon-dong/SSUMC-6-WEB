@@ -1,6 +1,7 @@
-import { Container, ValidationText, StyledInput, StyledError, StyledButton, StyleGoLogin, StyleGoLoginBtn, StyleGoLoginText } from "./SignUpPage.style"
-import { useNavigate } from "react-router-dom"
+import { Container, ValidationText, StyledInput, StyledError, StyledButton, StyledGoLogin, StyledGoLoginBtn, StyledGoLoginText } from "./SignUpPage.style";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { signUp } from "./apis/PostSignUp";
 
 function SignUpPage() {
     const navigate = useNavigate();
@@ -64,12 +65,22 @@ function SignUpPage() {
         return Object.values(formData).every(x => x) && Object.values(errors).every(error => !error);
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
         e.preventDefault();
         if (canSubmit()) {
-          console.log('회원가입 정보:', formData);
-          alert('회원가입을 성공했습니다!');
-          navigate('/');
+          try {
+            const response = await signUp(formData);
+            console.log("회원가입 성공:", response.data);
+            alert("회원가입이 성공적으로 완료되었습니다.");
+            navigate("/login");
+          } catch (error) {
+            console.error("회원가입 실패:", error);
+            alert(
+              `회원가입 중 오류가 발생했습니다: ${
+                error.response?.data?.message || error.message
+              }`
+            );
+          }
         } else {
           alert('모든 필드를 올바르게 입력했는지 확인해주세요.');
         }
@@ -122,10 +133,10 @@ function SignUpPage() {
             />
             {errors.verify_password ? <StyledError $errMsg={errors.verify_password}>{errors.verify_password}</StyledError> : <StyledError>-</StyledError>}
             <StyledButton onClick={handleSubmit} disabled={!canSubmit()} $canSubmit={canSubmit()}>제출하기</StyledButton>
-            <StyleGoLogin>
-              <StyleGoLoginText>이미 아이디가 있으신가요?</StyleGoLoginText>
-              <StyleGoLoginBtn href="./login">로그인 페이지로 이동하기</StyleGoLoginBtn>
-            </StyleGoLogin>
+            <StyledGoLogin>
+              <StyledGoLoginText>이미 아이디가 있으신가요?</StyledGoLoginText>
+              <StyledGoLoginBtn href="./login">로그인 페이지로 이동하기</StyledGoLoginBtn>
+            </StyledGoLogin>
         </Container>
       </>
     )
