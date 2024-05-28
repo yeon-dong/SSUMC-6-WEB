@@ -10,10 +10,11 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import Header from "./components/Header/Header";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import { AuthProvider } from "./components/AuthContext/AuthContext.jsx";
 
 function App() {
   return (
-    <>
+    <><AuthProvider>
       <div className='root-wrap'>
       <BrowserRouter>
         <Header />
@@ -30,6 +31,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </AuthProvider>
     </>
   )
 }
