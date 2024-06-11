@@ -19,6 +19,9 @@ export const StyledInput = styled.input`
     margin: 10px 0;
     border-radius: 20px;
     width: 40%;
+    @media (max-width: 700px) {
+      width: 70%;
+    }
 `;
 
 export const StyledError = styled.div`
@@ -38,5 +41,8 @@ export const StyledButton = styled.button`
   &:disabled {
     cursor: default;
     opacity: 0.7;
+  }
+  @media (max-width: 700px) {
+    width: 70%;
   }
 `;
