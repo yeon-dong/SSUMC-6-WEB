@@ -24,6 +24,11 @@ export const SearchInput = styled.input`
     background-color: white;
     border-radius: 20px;
     padding-left: 24px;
+    @media (max-width: 700px) {
+        width: 54%;
+        margin-top: 20px;
+        padding-right: 40px;
+    }
 `;
 
 export const SearchButton = styled.button`
@@ -32,6 +37,9 @@ export const SearchButton = styled.button`
   background-color: yellow;
   border-radius: 999px;
   margin-left: 16px;
+    @media (max-width: 700px) {
+        margin-top: 20px;
+    }
 `;
 
 export const MovieContainer = styled.div`
