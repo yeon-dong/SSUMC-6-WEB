@@ -53,10 +53,14 @@ export const Totals = styled.div`
 `;
 
 export const Reset = styled.button`
-  background: none;
-  border: 1px solid #888;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-  border-radius: 4px;
+    background: none;
+    border: 2px solid black;
+    color: black;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    cursor: pointer;
 `;
